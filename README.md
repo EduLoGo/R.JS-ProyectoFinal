@@ -13,3 +13,7 @@ Modulos:
 > react-router-dom
 > firebase
 ```
+
+## Vista Previa
+
+![](https://github.com/EduLoGo/R.JS-ProyectoFinal/blob/EntregaFinal/preview/Preview.gif)
