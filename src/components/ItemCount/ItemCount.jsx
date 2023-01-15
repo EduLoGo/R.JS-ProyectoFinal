@@ -1,9 +1,14 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const ItemCount = ({stockDisp}) => {
+const ItemCount = ({stockDisp, onAdd}) => {
     const [counter, setCounter] = useState(1);
     const [stock, setStock] = useState(stockDisp);
+    const [vendido, setVendido] = useState(false); 
+
+    useEffect(() => {
+        setStock(stockDisp);
+    },[stockDisp])
 
     const restar = () => {
         if(counter>1){
@@ -17,15 +22,11 @@ const ItemCount = ({stockDisp}) => {
         }   
     }
 
-    const onAdd = () => {
-        if (counter <= stock){
-            console.log(`Agregaste al carrito ${counter} de productos`)
-            setStock(stock - counter);
-            setCounter(1);
-        }else{
-            console.log(`No hay stock disponible`);
-        }
-        
+    const addToCart = (counter) => {
+        setStock(stockDisp - counter);
+        setCounter(1);
+        setVendido(true);
+        onAdd(counter);
     }
 
     return (
@@ -33,11 +34,11 @@ const ItemCount = ({stockDisp}) => {
             <div className='d-flex justify-content-center gap-4 mt-3'>
                 <div className="btn-group" role="group" aria-label="Basic outlined example">
                     <button type="button" className="btn btn-secondary" onClick={restar}>-</button>
-                    <button disable type="text" className="btn btn-dark">{counter}</button>
+                    <button type="text" className="btn btn-dark">{counter}</button>
                     <button type="button" className="btn btn-secondary" onClick={sumar}>+</button>
                 </div>
                 <div>
-                    <button type="button" className="btn btn-outline-primary" onClick={() => onAdd(counter)}>Agregar al Carrito</button>
+                    {vendido ? <Link to={"/cart"} className="btn btn-primary">Finalizar Compra</Link> : <button className="btn btn-primary" onClick={() => {addToCart(counter)}}>Agregar al Carrito</button>}
                 </div>
             </div>
         </div>

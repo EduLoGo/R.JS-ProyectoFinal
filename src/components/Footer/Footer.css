@@ -1,0 +1,12 @@
+.logoFooter{
+    width: 96px;
+}
+
+.copyright{
+    border-top: 1px solid white;
+    height: 10px;
+}
+
+.copyright p{
+    font-size: x-small;
+}

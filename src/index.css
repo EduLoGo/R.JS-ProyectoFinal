@@ -3,3 +3,26 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body{
+  /* background-color: #FFEDC2; */
+  background-image: linear-gradient(#FFEDC2, #AA5C45);
+  color: black;
+  min-height: 100vh;
+}
+.fondo02{
+  background-color: #FFC756;
+  color: black;
+}
+.fondo03{
+  background-color: #DE8B57;
+  color: black;
+}
+.fondo04{
+  background-color: #AA5C45;
+  color: black;
+}
+.fondo05{
+  background-color: #3B282C;
+  color: white;;
+}

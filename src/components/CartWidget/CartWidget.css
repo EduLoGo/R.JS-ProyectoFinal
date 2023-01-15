@@ -1,5 +1,10 @@
 .btn__cart{
     padding: 2px 5px;
+    transition: 0.5s;
+    width: 50px;
+}
+.btn__cart:hover{
+    background-color: #FFEDC2;
 }
 .btn__cart img{
     width: 24px;

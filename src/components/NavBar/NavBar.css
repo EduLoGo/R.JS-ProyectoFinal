@@ -1,0 +1,10 @@
+.btnMenu{
+    border-radius: 8px;
+    transition: 0.5s;
+    width: 150px;
+    text-align: center;
+}
+.btnMenu:hover{
+    background-color: #FFEDC2;
+    font-weight: 600;
+}
